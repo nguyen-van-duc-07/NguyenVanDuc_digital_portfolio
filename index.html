@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Văn Đức - Digital Portfolio</title>
+    <meta name="description" content="Digital Portfolio cá nhân của Nguyễn Văn Đức, sinh viên năm nhất chuyên ngành Khoa học Máy tính - Trường Đại học Công nghệ, Đại học Quốc gia Hà Nội.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600&family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons (bộ icon gọn nhẹ, hiện đại) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css?v=1.0.4">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#home" class="logo" id="site-logo">
+                Digital <span class="logo-accent">Portfolio</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active" id="nav-home">Giới thiệu</a></li>
+                    <li><a href="#projects" class="nav-link" id="nav-projects">Dự án</a></li>
+                    <li><a href="#summary" class="nav-link" id="nav-summary">Tổng kết</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+                    <i data-lucide="menu" class="menu-icon"></i>
+                    <i data-lucide="x" class="close-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECTION 1: GIỚI THIỆU (HOME) -->
+        <section id="home" class="section hero-section">
+            <div class="container hero-grid">
+                <div class="hero-info">
+                    <div class="hero-profile-header">
+                        <img src="assets/avatar.jpg" alt="Nguyễn Văn Đức" class="hero-avatar">
+                        <div class="badge">UET • Khoa học Máy tính</div>
+                    </div>
+                    <h1 class="hero-title">Xin chào, tôi là <br><span class="gradient-text">Nguyễn Văn Đức</span></h1>
+                    <p class="hero-subtitle">
+                        Tôi là sinh viên năm thứ nhất chuyên ngành <strong>Khoa học Máy tính</strong>, thuộc <strong>Khoa Công nghệ Thông tin, Trường Đại học Công nghệ, Đại học Quốc gia Hà Nội (VNU-UET)</strong>. Ngay từ cấp 2, tôi đã có niềm đam mê khám phá thế giới máy tính và công nghệ. Bước vào Đại học, tôi quyết tâm theo đuổi đam mê này để đóng góp tri thức của mình vào các ứng dụng hữu ích phục vụ cuộc sống.
+                    </p>
+                    <p class="hero-context" style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.6; border-left: 3px solid var(--primary); padding-left: 1rem; font-style: italic;">
+                        Trang portfolio này được thực hiện nhằm đáp ứng yêu cầu môn học <strong>Nhập môn công nghệ số và ứng dụng trí tuệ nhân tạo</strong>. Đây không chỉ là một bài tập học thuật đơn thuần mà còn là không gian ghi nhận các trải nghiệm, những điều tôi tích lũy được qua môn học và là nơi để tôi thể hiện năng lực bản thân trên con đường công nghệ tương lai.
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary" id="cta-projects">
+                            Xem các dự án <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" style="margin-left: 0.25rem;"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                        <a href="#summary" class="btn btn-outline" id="cta-summary">
+                            Hành trình của tôi
+                        </a>
+                    </div>
+
+                    <!-- Social links -->
+                    <div class="social-links">
+                        <a href="https://github.com/nguyen-van-duc-07" target="_blank" rel="noopener noreferrer" aria-label="Github Profile" class="social-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/nguyen.van.uc.113692/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile" class="social-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ducnguyen03012007@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" class="social-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <!-- Tech/Interactive Terminal Block -->
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="terminal-title">student_info.py</div>
+                            <div class="terminal-lang">python</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="code-line"><span class="code-prompt">>>></span> <span class="code-comment"># Tải hồ sơ sinh viên KHMT</span></div>
+                            <div class="code-line"><span class="code-prompt">>>></span> <span class="code-keyword">import</span> student</div>
+                            <div class="code-line"><span class="code-prompt">>>></span> profile = student.load_profile()</div>
+                            <div class="code-line"><span class="code-prompt">>>></span> profile.print_info()</div>
+                            <div class="code-output" id="terminal-output">
+                                <!-- Chữ sẽ chạy tự động thông qua Javascript -->
+                                <span class="typing-placeholder">Loading student profile...</span>
+                            </div>
+                            <div class="code-line active-line"><span class="code-prompt">ducnguyen@cs-terminal:~$</span> <span class="cursor-input" id="terminal-cursor-input"></span><span class="cursor-blink">|</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Subtle decoration elements -->
+                    <div class="floating-circle circle-1"></div>
+                    <div class="floating-circle circle-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: DỰ ÁN (PROJECTS) -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-badge">Học phần Nhập môn công nghệ số & AI</div>
+                    <h2 class="section-title">Các Bài Tập & Dự Án</h2>
+                    <p class="section-description">
+                        Tổng hợp kết quả học tập và báo cáo của tôi qua các bài tập thực hành và bài giữa kỳ của môn học. Nhấp vào bất kỳ bài tập nào để xem nội dung chi tiết.
+                    </p>
+                </div>
+
+                <!-- Filters -->
+                <div class="project-filters reveal">
+                    <button class="filter-btn active" data-filter="all" id="filter-all">Tất cả</button>
+                    <button class="filter-btn" data-filter="practice" id="filter-practice">Bài thực hành (1-6)</button>
+                    <button class="filter-btn" data-filter="major" id="filter-major">Giữa kỳ</button>
+                </div>
+
+                <!-- Project Grid (8 items) -->
+                <div class="project-grid reveal" id="project-grid-container">
+                    
+                    <!-- Card 1: Bài 1 -->
+                    <div class="project-card clickable-card" data-category="practice" data-project-id="bai1" style="cursor: pointer;">
+                        <div class="project-img-container">
+                            <div class="project-icon-wrapper cpp-style">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder-open"><path d="m6 14 1.45-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.55 6a2 2 0 0 1-1.94 1.5H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H18a2 2 0 0 1 2 2v2"/></svg>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Bài thực hành 1</span>
+                            <h3 class="project-name">Tổ Chức và Quản Lí Dữ Liệu Cá Nhân</h3>
+                            <p class="project-desc">
+                                Thực hành phân tích tình hình lưu trữ, thiết kế hệ thống cây thư mục phân cấp khoa học và xây dựng quy tắc đặt tên file (Naming Convention) chuẩn chỉnh cùng chiến lược sao lưu 2 lớp.
+                            </p>
+                            <div class="project-tech">
+                                <span>File Management</span>
+                                <span>Naming Convention</span>
+                                <span>Backup Strategy</span>
+                            </div>
+                            <div class="project-links">
+                                <span class="proj-link-item active-demo">
+                                    Chi tiết bài viết <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Bài 2 -->
+                    <div class="project-card clickable-card" data-category="practice" data-project-id="bai2" style="cursor: pointer;">
+                        <div class="project-img-container">
+                            <div class="project-icon-wrapper python-style" style="background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%); color: white;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Bài thực hành 2</span>
+                            <h3 class="project-name">Tìm Kiếm & Đánh Giá Thông Tin Học Thuật</h3>
+                            <p class="project-desc">
+                                Nghiên cứu ứng dụng AI/ML trong tự động hóa kiểm thử phần mềm. Sử dụng các toán tử tìm kiếm nâng cao để thu thập tài liệu khoa học đáng tin cậy và đánh giá nguồn lực.
+                            </p>
+                            <div class="project-tech">
+                                <span>Google Scholar</span>
+                                <span>Information Evaluation</span>
+                                <span>AI & Testing</span>
+                            </div>
+                            <div class="project-links">
+                                <span class="proj-link-item active-demo">
+                                    Chi tiết bài viết <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Bài 3 -->
+                    <div class="project-card clickable-card" data-category="practice" data-project-id="bai3" style="cursor: pointer;">
+                        <div class="project-img-container">
+                            <div class="project-icon-wrapper web-style" style="background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-terminal"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Bài thực hành 3</span>
+                            <h3 class="project-name">Viết Prompt Hiệu Quả Trong Học Tập</h3>
+                            <p class="project-desc">
+                                Thực hành xây dựng các câu lệnh Prompt chất lượng cao theo khung C.R.E.A.T.E (Role-prompting, Chain-of-Thought) để tối ưu kết quả đầu ra của AI cho các tác vụ học tập.
+                            </p>
+                            <div class="project-tech">
+                                <span>Prompt Engineering</span>
+                                <span>CREATE Framework</span>
+                                <span>LLMs Learning</span>
+                            </div>
+                            <div class="project-links">
+                                <span class="proj-link-item active-demo">
+                                    Chi tiết bài viết <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Bài 4 -->
+                    <div class="project-card clickable-card" data-category="practice" data-project-id="bai4" style="cursor: pointer;">
+                        <div class="project-img-container">
+                            <div class="project-icon-wrapper" style="background: linear-gradient(135deg, #10b981 0%, #34d399 100%); color: white;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Bài thực hành 4</span>
+                            <h3 class="project-name">Kỹ Năng Giao Tiếp và Hợp Tác Số</h3>
+                            <p class="project-desc">
+                                Báo cáo trải nghiệm cộng tác nhóm xây dựng Hệ thống đấu giá qua Discord, Google Docs và quản lý phiên bản mã nguồn chuyên nghiệp bằng nhánh trên GitHub.
+                            </p>
+                            <div class="project-tech">
+                                <span>Git & GitHub</span>
+                                <span>Discord Collaboration</span>
+                                <span>Conflict Resolution</span>
+                            </div>
+                            <div class="project-links">
+                                <span class="proj-link-item active-demo">
+                                    Chi tiết bài viết <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Bài 5 -->
+                    <div class="project-card clickable-card" data-category="practice" data-project-id="bai5" style="cursor: pointer;">
+                        <div class="project-img-container">
+                            <div class="project-icon-wrapper" style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%); color: white;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-video"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2"/></svg>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Bài thực hành 5</span>
+                            <h3 class="project-name">Dự Án Sáng Tạo Nội Dung Số</h3>
+                            <p class="project-desc">
+                                Ứng dụng tích hợp Gemini, ChatGPT, Canva Magic Design và CapCut AI để tối ưu hóa việc thiết kế kịch bản, làm ảnh thumbnail và hậu kỳ âm thanh cho video giáo dục.
+                            </p>
+                            <div class="project-tech">
+                                <span>Content Creation</span>
+                                <span>Video Production</span>
+                                <span>AI Tools Integration</span>
+                            </div>
+                            <div class="project-links">
+                                <span class="proj-link-item active-demo">
+                                    Chi tiết bài viết <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Bài 6 -->
+                    <div class="project-card clickable-card" data-category="practice" data-project-id="bai6" style="cursor: pointer;">
+                        <div class="project-img-container">
+                            <div class="project-icon-wrapper" style="background: linear-gradient(135deg, #e11d48 0%, #fb7185 100%); color: white;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6v7z"/><path d="m9 12 2 2 4-4"/></svg>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Bài thực hành 6</span>
+                            <h3 class="project-name">Sử Dụng AI Có Trách Nhiệm & Đạo Đức</h3>
+                            <p class="project-desc">
+                                Phân tích ranh giới giữa hỗ trợ hợp lý và gian lận học thuật. Đề xuất bộ 5 nguyên tắc vàng của cá nhân để ứng dụng AI có trách nhiệm và đảm bảo liêm chính.
+                            </p>
+                            <div class="project-tech">
+                                <span>AI Ethics</span>
+                                <span>Academic Integrity</span>
+                                <span>Responsible Coding</span>
+                            </div>
+                            <div class="project-links">
+                                <span class="proj-link-item active-demo">
+                                    Chi tiết bài viết <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: Bài Giữa Kỳ -->
+                    <div class="project-card clickable-card" data-category="major" data-project-id="giuaki" style="cursor: pointer;">
+                        <div class="project-img-container">
+                            <div class="project-icon-wrapper" style="background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%); color: white;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Dự án Giữa Kỳ</span>
+                            <h3 class="project-name">Hồ Sơ Làm Việc Nhóm & Video Thuyết Trình</h3>
+                            <p class="project-desc">
+                                Hồ sơ tổng hợp và video thuyết trình nhóm (YouTube) về quá trình làm việc, phân chia kịch bản, dựng hình và ứng dụng AI để sáng tạo nội dung số của Nhóm 35.
+                            </p>
+                            <div class="project-tech">
+                                <span>Teamwork Dossier</span>
+                                <span>YouTube Presentation</span>
+                                <span>Collaboration Log</span>
+                            </div>
+                            <div class="project-links">
+                                <span class="proj-link-item active-demo">
+                                    Xem kịch bản & Video <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: TỔNG KẾT (SUMMARY) -->
+        <section id="summary" class="section summary-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-badge">Học tập & Phát triển</div>
+                    <h2 class="section-title">Hành Trình & Tổng Kết</h2>
+                    <p class="section-description">
+                        Nhìn lại chặng đường năm học đầu tiên và định hình các mục tiêu lớn tiếp theo trên con đường trở thành một Kỹ sư AI.
+                    </p>
+                </div>
+
+                <div class="summary-grid">
+                    <!-- Timeline Hành trình năm nhất -->
+                    <div class="timeline-column reveal">
+                        <h3 class="column-title"><i data-lucide="milestone"></i> Dòng Thời Gian Năm Nhất</h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Học kỳ 1</span>
+                                    <h4>Tư Duy Tính Toán & Toán Học Nền Tảng</h4>
+                                    <p>Tiếp cận và xây dựng tư duy giải quyết vấn đề thông qua môn <strong>Tư duy tính toán</strong> (Lập trình Python, thiết kế thuật toán). Đồng thời rèn luyện nền tảng toán học vững chắc với môn <strong>Giải tích 1</strong> và <strong>Đại số tuyến tính</strong>.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Học kỳ 2</span>
+                                    <h4>Lập Trình Nâng Cao & Định Hướng AI</h4>
+                                    <p>Học hỏi sâu hơn về mô hình lập trình qua môn <strong>Lập trình nâng cao</strong> (Lập trình AI cơ bản, Lập trình hướng đối tượng - OOP). Tìm hiểu sâu về toán ứng dụng qua <strong>Toán rời rạc</strong>, <strong>Giải tích 2</strong>, <strong>Vật lý đại cương</strong> và tiếp cận chuyên ngành sâu thông qua môn học <strong>Nhập môn công nghệ số và ứng dụng trí tuệ nhân tạo</strong>.</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">Kỳ nghỉ hè</span>
+                                    <h4>Tự Học Dự Án & Hoàn Thiện Kỹ Năng</h4>
+                                    <p>Lên kế hoạch chủ động tự học và thực hành xây dựng các dự án công nghệ cá nhân, đồng thời tập trung cải thiện và làm chủ kỹ năng quản lý mã nguồn bằng công cụ chuyên dụng <strong>Git & GitHub</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills & Future Directions -->
+                    <div class="info-column reveal">
+                        <div class="skills-card" style="margin-bottom: 2.2rem;">
+                            <h3 class="column-title"><i data-lucide="zap"></i> Điểm Mạnh Bản Thân</h3>
+                            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                                <strong>Chủ động tìm tòi:</strong> Luôn chủ động học hỏi những kiến thức mới mẻ, tự nâng cấp kỹ năng để bản thân không bị lạc hậu trước xu hướng thay đổi nhanh chóng của xã hội số và công nghệ hiện đại.
+                            </p>
+                        </div>
+
+                        <div class="skills-card">
+                            <h3 class="column-title"><i data-lucide="award"></i> Kỹ Năng Đạt Được</h3>
+                            <div class="skills-container">
+                                <div class="skill-category">
+                                    <h4>Ngôn ngữ lập trình</h4>
+                                    <div class="skill-tags">
+                                        <span>C/C++</span>
+                                        <span>Python</span>
+                                        <span>Java</span>
+                                    </div>
+                                </div>
+                                <div class="skill-category">
+                                    <h4>Công cụ & Khác</h4>
+                                    <div class="skill-tags">
+                                        <span>Git / GitHub</span>
+                                        <span>Command Line / Bash</span>
+                                        <span>VS Code</span>
+                                        <span>Tư duy Thuật toán</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="future-card">
+                            <h3 class="column-title"><i data-lucide="compass"></i> Định Hướng & Hoài Bão</h3>
+                            <ul class="future-list">
+                                <li>
+                                    <div class="list-icon"><i data-lucide="brain-circuit"></i></div>
+                                    <div class="list-text">
+                                        <strong>Nghiên cứu về Trí tuệ Nhân tạo:</strong> Bắt đầu tìm hiểu sâu lý thuyết AI và các ứng dụng nâng cao của Trí tuệ nhân tạo trong năm thứ 2 tại UET.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-icon"><i data-lucide="sparkles"></i></div>
+                                    <div class="list-text">
+                                        <strong>Trở thành Kỹ sư AI (AI Engineer):</strong> Khát vọng thiết kế các hệ thống AI Agent thông minh có mức độ tự động hóa cao, đóng vai trò trợ giúp đắc lực cho con người trong các công việc nâng cao.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nhận Xét & Đánh Giá Sự Trưởng Thành Qua Chuỗi Bài Tập -->
+                <div class="reflection-card reveal">
+                    <h3 class="column-title"><i data-lucide="graduation-cap"></i> Đánh Giá Sự Trưởng Thành Qua Chuỗi Bài Tập</h3>
+                    <p class="reflection-intro">
+                        Qua việc thực hiện và hoàn thành 6 bài tập lớn có tính hệ thống (từ quản lý dữ liệu, tìm kiếm học thuật, viết prompt AI đến giao tiếp số, thiết kế và đạo đức AI), tôi đã nhìn nhận rõ rệt sự trưởng thành và phát triển toàn diện của bản thân:
+                    </p>
+                    <div class="reflection-grid">
+                        <div class="reflection-item">
+                            <div class="reflection-header-item">
+                                <span class="reflection-icon"><i data-lucide="folder-open"></i></span>
+                                <strong>Quản lý & Sắp xếp Thư mục</strong>
+                            </div>
+                            <p>
+                                Từ thói quen lưu trữ tự phát, tôi đã thiết lập được tư duy quản trị file khoa học (phân tách <code>assets</code>, <code>src</code>, <code>docs</code>). Việc dọn dẹp các tệp tin rác và file tạm giúp tối ưu hóa dung lượng dự án, đảm bảo mã nguồn tinh gọn và chuẩn hóa cấu trúc thư mục để đồng bộ và chia sẻ chuyên nghiệp trên GitHub.
+                            </p>
+                        </div>
+                        <div class="reflection-item">
+                            <div class="reflection-header-item">
+                                <span class="reflection-icon"><i data-lucide="cpu"></i></span>
+                                <strong>Sử dụng AI Hiệu quả & Trách nhiệm</strong>
+                            </div>
+                            <p>
+                                Tôi đã chuyển đổi từ việc xem AI là công cụ tạo sẵn sang vai trò là một cộng sự đồng sáng tạo. Nhờ áp dụng các kỹ thuật viết Prompt nâng cao (Role-play, Chain-of-Thought), tôi đã học cách tối ưu hóa phản hồi của AI, đồng thời luôn duy trì tư duy phản biện, kiểm chứng nguồn tin để hạn chế tối đa ảo giác thông tin.
+                            </p>
+                        </div>
+                        <div class="reflection-item">
+                            <div class="reflection-header-item">
+                                <span class="reflection-icon"><i data-lucide="users"></i></span>
+                                <strong>Giao tiếp & Cộng tác Số</strong>
+                            </div>
+                            <p>
+                                Bài tập nhóm giữa kỳ đã rèn luyện cho tôi khả năng giao tiếp và làm việc nhóm trực tuyến hiệu quả. Từ việc lên kịch bản, phân chia vai trò trên Discord/Google Docs đến việc dựng video thuyết trình và phát hành trên YouTube, tôi đã hiểu rõ tầm quan trọng của việc truyền thông số và phân phối nội dung đa kênh.
+                            </p>
+                        </div>
+                        <div class="reflection-item">
+                            <div class="reflection-header-item">
+                                <span class="reflection-icon"><i data-lucide="trending-up"></i></span>
+                                <strong>Định Hướng Ứng Dụng Tương Lai</strong>
+                            </div>
+                            <p>
+                                Chuỗi bài tập này đã tạo ra một bệ phóng vững chắc để tôi áp dụng các kỹ năng mới vào tương lai. Sự kết hợp giữa tư duy thuật toán, kỹ năng quản lý mã nguồn bằng Git/GitHub, và khả năng tương tác thông minh với AI sẽ được ứng dụng trực tiếp trong nghiên cứu chuyên sâu về Học máy (Machine Learning) và phát triển các hệ thống AI Agent trong những năm học tiếp theo tại UET.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Điểm Tâm Đắc & Thách Thức Khi Xây Dựng Portfolio -->
+                    <div style="margin-top: 2.5rem; border-top: 1px solid var(--border-color); padding-top: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.2rem;">
+                        <div>
+                            <h4 style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem;"><i data-lucide="heart" style="color: #ef4444; width: 20px; height: 20px;"></i> Điểm Tâm Đắc Nhất</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                                Tôi cảm thấy vô cùng tâm đắc khi tự tay lập trình thành công trang web Digital Portfolio này bằng code HTML/CSS/JS thuần. Đây không chỉ là nơi lưu trữ khoa học toàn bộ sản phẩm học tập môn Nhập môn công nghệ số & AI dưới dạng các báo cáo chi tiết kèm ảnh minh họa và bảng biểu, mà còn là minh chứng rõ nét cho năng lực lập trình front-end, tư duy thẩm mỹ hiện đại và khả năng làm chủ các công cụ hỗ trợ thông minh.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem;"><i data-lucide="alert-triangle" style="color: var(--primary); width: 20px; height: 20px;"></i> Thách Thức & Khắc Phục</h4>
+                            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
+                                Thách thức lớn nhất khi xây dựng Portfolio này là việc hệ thống hóa, trích xuất dữ liệu dung lượng lớn (đặc biệt là hàng chục hình ảnh minh họa từ tệp PDF/Word gốc) và tối ưu hóa giao diện hiển thị tương thích trên mọi thiết bị di động (Responsive). Tôi đã khắc phục bằng cách thiết kế lại stylesheet, chuẩn hóa cấu trúc tệp tin, dọn dẹp file rác và áp dụng chiến lược cache-busting để trang web tải nhanh và mượt mà nhất.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simple Contact Callout -->
+                <div class="contact-callout reveal">
+                    <div class="callout-content">
+                        <h3>Hãy cùng kết nối!</h3>
+                        <p>Nếu bạn có bất kỳ câu hỏi nào về các dự án hoặc muốn trao đổi học tập cùng tôi.</p>
+                    </div>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ducnguyen03012007@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-contact-now">
+                        <i data-lucide="mail"></i> Gửi Email Liên Hệ
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <!-- Left Column: Connect with me -->
+            <div class="footer-connect">
+                <h2 class="footer-heading">Kết nối với tôi</h2>
+                <div class="contact-info-list">
+                    <div class="contact-info-item">
+                        <div class="contact-icon email-icon">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">EMAIL</span>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ducnguyen03012007@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-value">ducnguyen03012007@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon address-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">ĐỊA CHỈ</span>
+                            <span class="contact-value">Tòa E1, 144 Xuân Thủy, Dịch Vọng Hậu, Cầu Giấy, Hà Nội</span>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon phone-icon">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">SỐ ĐIỆN THOẠI</span>
+                            <span class="contact-value">0867***313</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Social Networks Card -->
+            <div class="footer-social-card">
+                <div class="social-card-inner">
+                    <h3 class="social-card-title">Mạng xã hội</h3>
+                    <div class="social-buttons-grid">
+                        <a href="https://www.facebook.com/nguyen.van.uc.113692/" target="_blank" rel="noopener noreferrer" class="social-btn facebook-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://github.com/nguyen-van-duc-07" target="_blank" rel="noopener noreferrer" class="social-btn github-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn instagram-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Row -->
+        <div class="footer-bottom-bar">
+            <div class="container footer-bottom-content">
+                <div class="footer-bottom-left">
+                    <span class="footer-bottom-logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                    </span>
+                    <p class="copyright-text">Nguyễn Văn Đức &copy; <span id="current-year"></span> VNU-UET Digital Skills Portfolio. All rights reserved.</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="#" class="footer-policy-link">Privacy Policy</a>
+                    <a href="#" class="footer-policy-link">Terms of Service</a>
+                    <a href="#summary" class="footer-policy-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Scroll-to-Top Button -->
+    <button class="global-scroll-top-btn" id="global-scroll-top" title="Lên đầu trang" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <!-- Overlay Scroll-to-Top Button -->
+    <button class="overlay-scroll-top-btn" id="overlay-scroll-top" title="Lên đầu trang" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <!-- Project Detail Fullscreen Overlay (New Screen) -->
+    <div class="project-detail-overlay" id="project-detail-overlay">
+        <div class="detail-container">
+            <button class="detail-close-btn" id="detail-close-btn" aria-label="Close detail screen">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="12" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                <span>Quay lại danh sách</span>
+            </button>
+            
+            <div class="detail-content-wrapper">
+                <!-- Dynamically populated via JS -->
+                <div id="detail-dynamic-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js?v=1.0.4"></script>
+</body>
+</html>
