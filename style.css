@@ -1968,3 +1968,55 @@ a.contact-value:hover {
     box-shadow: 0 6px 25px rgba(var(--primary-rgb), 0.4);
 }
 
+/* ----------------------------------------------------
+   PRINT STYLES (PDF EXPORT OPTIMIZATION)
+   ---------------------------------------------------- */
+@media print {
+    /* Hide interactive web UI controls */
+    .global-scroll-top-btn,
+    .overlay-scroll-top-btn,
+    .theme-toggle,
+    .mobile-toggle,
+    .nav-actions,
+    .floating-circle,
+    .btn,
+    .project-links,
+    .contact-callout {
+        display: none !important;
+    }
+
+    /* Force background colors and gradients to print correctly */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    /* Adjust page margins for print output */
+    @page {
+        margin: 1.5cm;
+    }
+
+    body {
+        background-color: var(--bg-primary) !important;
+        color: var(--text-primary) !important;
+    }
+
+    /* Ensure modals print cleanly if open */
+    .project-detail-overlay {
+        position: absolute !important;
+        background: var(--bg-primary) !important;
+        overflow: visible !important;
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    .detail-container {
+        padding: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .detail-close-btn {
+        display: none !important;
+    }
+}
