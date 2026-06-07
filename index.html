@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css?v=1.0.5">
+    <link rel="stylesheet" href="style.css?v=1.1.0">
 </head>
 <body>
 
@@ -133,11 +133,49 @@
                     </p>
                 </div>
 
-                <!-- Filters -->
-                <div class="project-filters reveal">
-                    <button class="filter-btn active" data-filter="all" id="filter-all">Tất cả</button>
-                    <button class="filter-btn" data-filter="practice" id="filter-practice">Bài thực hành (1-6)</button>
-                    <button class="filter-btn" data-filter="major" id="filter-major">Giữa kỳ</button>
+                <div class="project-overview reveal" aria-label="Tổng quan bài tập">
+                    <div class="overview-intro">
+                        <span class="overview-kicker">Learning archive / 2026</span>
+                        <strong>Một hành trình học tập được kể bằng sản phẩm thực tế.</strong>
+                    </div>
+                    <div class="overview-stat">
+                        <strong>07</strong>
+                        <span>Sản phẩm</span>
+                    </div>
+                    <div class="overview-stat">
+                        <strong>60+</strong>
+                        <span>Minh chứng</span>
+                    </div>
+                    <div class="overview-stat">
+                        <strong>12</strong>
+                        <span>Công cụ số</span>
+                    </div>
+                </div>
+
+                <!-- Filters and discovery tools -->
+                <div class="project-toolbar reveal">
+                    <label class="project-search" for="project-search-input">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input type="search" id="project-search-input" placeholder="Tìm theo chủ đề hoặc công cụ..." autocomplete="off">
+                        <kbd>/</kbd>
+                    </label>
+                    <div class="project-view-toggle" aria-label="Kiểu hiển thị">
+                        <button class="view-btn active" type="button" data-view="grid" aria-label="Hiển thị dạng lưới" title="Dạng lưới">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/></svg>
+                        </button>
+                        <button class="view-btn" type="button" data-view="list" aria-label="Hiển thị dạng danh sách" title="Dạng danh sách">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-filter-row reveal">
+                    <div class="project-filters">
+                        <button class="filter-btn active" data-filter="all" id="filter-all">Tất cả <span>07</span></button>
+                        <button class="filter-btn" data-filter="practice" id="filter-practice">Bài thực hành <span>06</span></button>
+                        <button class="filter-btn" data-filter="major" id="filter-major">Giữa kỳ <span>01</span></button>
+                    </div>
+                    <p class="project-result-count" id="project-result-count" aria-live="polite">Đang hiển thị 7 sản phẩm</p>
                 </div>
 
                 <!-- Project Grid (8 items) -->
@@ -592,6 +630,9 @@
 
     <!-- Project Detail Fullscreen Overlay (New Screen) -->
     <div class="project-detail-overlay" id="project-detail-overlay">
+        <!-- Reading Progress Bar -->
+        <div class="reading-progress" id="overlay-progress"></div>
+        
         <div class="detail-container">
             <button class="detail-close-btn" id="detail-close-btn" aria-label="Close detail screen">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" x2="5" y1="12" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
@@ -605,7 +646,16 @@
         </div>
     </div>
 
+    <!-- Lightbox Image Viewer -->
+    <div class="lightbox" id="lightbox-modal" role="dialog" aria-hidden="true" aria-label="Phóng to hình ảnh">
+        <span class="lightbox-close" id="lightbox-close" role="button" aria-label="Đóng">&times;</span>
+        <div class="lightbox-content-wrapper">
+            <img class="lightbox-content" id="lightbox-img" alt="">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
     <!-- Custom JS -->
-    <script src="script.js?v=1.0.4"></script>
+    <script src="script.js?v=1.1.0"></script>
 </body>
 </html>
