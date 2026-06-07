@@ -194,41 +194,91 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeCommand, 1000);
 
     /* ----------------------------------------------------
-       PROJECT PORTFOLIO FILTERS
+       PROJECT PORTFOLIO FILTERS, SEARCH & VIEW TOGGLE
        ---------------------------------------------------- */
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
+    const searchInput = document.getElementById('project-search-input');
+    const viewButtons = document.querySelectorAll('.view-btn');
+    const gridContainer = document.getElementById('project-grid-container');
 
+    function updateProjectsList() {
+        const activeFilterBtn = document.querySelector('.project-filters .filter-btn.active');
+        const filterValue = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
+        const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+        const projectCards = document.querySelectorAll('.project-card');
+        let visibleCount = 0;
+
+        projectCards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            const title = card.querySelector('.project-name')?.textContent.toLowerCase() || '';
+            const desc = card.querySelector('.project-desc')?.textContent.toLowerCase() || '';
+            const tag = card.querySelector('.project-tag')?.textContent.toLowerCase() || '';
+            const tech = Array.from(card.querySelectorAll('.project-tech span')).map(t => t.textContent.toLowerCase()).join(' ');
+
+            const matchesFilter = (filterValue === 'all' || category === filterValue);
+            const matchesSearch = !query || title.includes(query) || desc.includes(query) || tag.includes(query) || tech.includes(query);
+
+            if (matchesFilter && matchesSearch) {
+                visibleCount++;
+                card.style.display = 'flex';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                }, 50);
+            } else {
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
+        });
+
+        // Update result count text
+        const resultCountEl = document.getElementById('project-result-count');
+        if (resultCountEl) {
+            resultCountEl.textContent = `Đang hiển thị ${visibleCount} sản phẩm`;
+        }
+    }
+
+    // Filter button click handler
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Update active state of buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
+            updateProjectsList();
+        });
+    });
 
-            const filterValue = button.getAttribute('data-filter');
+    // Search input handler
+    if (searchInput) {
+        searchInput.addEventListener('input', updateProjectsList);
 
-            projectCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                
-                if (filterValue === 'all' || category === filterValue) {
-                    // Show matching card
-                    card.style.display = 'flex';
-                    // Animation delay for layout grid
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
-                    }, 50);
+        // Keyboard shortcut: Press '/' to focus search
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '/' && document.activeElement !== searchInput) {
+                e.preventDefault();
+                searchInput.focus();
+            }
+        });
+    }
+
+    // Layout view toggle handler (Grid vs List)
+    if (viewButtons.length > 0 && gridContainer) {
+        viewButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                viewButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const viewMode = btn.getAttribute('data-view');
+                if (viewMode === 'list') {
+                    gridContainer.classList.add('list-view');
                 } else {
-                    // Hide non-matching card
-                    card.style.opacity = '0';
-                    card.style.transform = 'scale(0.9)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300); // matches transition time
+                    gridContainer.classList.remove('list-view');
                 }
             });
         });
-    });
+    }
 
     /* ----------------------------------------------------
        GLOBAL SCROLL-TO-TOP BUTTON
