@@ -2303,15 +2303,32 @@ a.contact-value:hover {
         overflow: visible !important;
         height: auto !important;
         min-height: 0 !important;
+        z-index: 9999 !important;
     }
 
     .detail-container {
         padding: 0 !important;
         box-shadow: none !important;
+        max-width: 100% !important;
+        width: 100% !important;
     }
 
-    .detail-close-btn {
+    .detail-close-btn,
+    .detail-sidebar,
+    .reading-progress-bar,
+    .progress-bar-container {
         display: none !important;
+    }
+
+    .detail-grid {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .detail-main {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
     }
 }
 
